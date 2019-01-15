@@ -7,7 +7,7 @@ const CarList = (props) => {
   return (
     <div>
       {
-        props.list.map((car) => {
+        props.list.map((car, index) => {
           if (car) {
             return <CarListItem
               key={key++}
@@ -16,6 +16,7 @@ const CarList = (props) => {
               time={car.time}
               bookingId={car.bookingId}
               removeCar={props.removeCar}
+              slotNo={index + 1}
             />
           }
           return null

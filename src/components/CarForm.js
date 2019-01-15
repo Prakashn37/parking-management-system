@@ -33,6 +33,7 @@ export default class CarForm extends React.Component {
         registration: this.state.registration.toUpperCase(),
         color: this.state.color
       });
+      this.props.setRouteIndex(1)
     }
   };
   render() {

@@ -9,7 +9,7 @@ class AddCarPage extends React.Component {
       <div>
         <h1>Add Car</h1>
         <CarForm
-          addCar={this.props.addCar}
+          {...this.props}
         />
       </div>
     );
@@ -17,7 +17,8 @@ class AddCarPage extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  addCar: (car) => dispatch(actions.addCar(car))
+  addCar: (car) => dispatch(actions.addCar(car)),
+  setRouteIndex: (index) => dispatch(actions.setRouteIndex(index))
 });
 
 
