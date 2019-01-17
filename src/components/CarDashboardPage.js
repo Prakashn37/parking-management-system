@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { removeCar } from '../actions/actions'
 import CarList from './CarList';
-import _ from 'lodash'
 
 class CarDashboardPage extends React.Component {
   constructor(props) {
@@ -14,7 +13,7 @@ class CarDashboardPage extends React.Component {
     }
   }
   componentDidUpdate(prevProps) {
-    if (_.difference(this.props.lotDetails, prevProps.lotDetails)) {
+    if (prevProps.lotDetails != this.props.lotDetails) {
       let freeSolts = this.props.lotDetails.filter(e => e == null).length
       let occupiedSlots = this.props.lotDetails.length - freeSolts
       if (this.state.occupiedSlots != occupiedSlots || this.state.freeSolts != freeSolts) {
