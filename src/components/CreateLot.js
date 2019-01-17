@@ -28,10 +28,11 @@ class CreateLot extends React.Component {
                 error: 'Slots cannot be more than thousand'
             }))
         }
-        else if (this.state.totalSlots < this.state.occupiedSlots) {
+        else if (this.state.totalSlots <= this.state.occupiedSlots) {
             this.props.createPrefilledLot(this.state.totalSlots, this.state.occupiedSlots)
         }
         else {
+            console.log(this.state.totalSlots, this.state.occupiedSlots)
             let error = 'Arithmetically not possible';
             this.setState({ error });
         }

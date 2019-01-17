@@ -4,17 +4,32 @@ import * as actions from '../actions/actions'
 import CarForm from './CarForm';
 
 class AddCarPage extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log(this.props.lotDetails)
+  }
   render() {
     return (
       <div>
-        <h1>Add Car</h1>
-        <CarForm
-          {...this.props}
-        />
+        {this.props.lotDetails.length ?
+          <React.Fragment>
+            <h1>Add Car</h1>
+            <CarForm
+              {...this.props}
+            />
+          </React.Fragment>
+          :
+          <React.Fragment>
+            <h1>Create a lot to add car</h1>
+          </React.Fragment>}
       </div>
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  lotDetails: state.rootReducer.lotDetails
+});
 
 const mapDispatchToProps = (dispatch) => ({
   addCar: (car) => dispatch(actions.addCar(car)),
@@ -22,4 +37,4 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 
-export default connect(null, mapDispatchToProps)(AddCarPage)
+export default connect(mapStateToProps, mapDispatchToProps)(AddCarPage)

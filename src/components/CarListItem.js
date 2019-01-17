@@ -24,13 +24,18 @@ const CarListItem = (props) => {
         <div>
             <ListItem>
                 <Avatar>
-                    <FontAwesomeIcon icon={faCar} color={props.color} style={{ backgroundColor: '#f6f6f6' }} />
+                    <FontAwesomeIcon size={"lg"} icon={faCar} color={props.color} style={{ backgroundColor: '#f6f6f6' }} />
                 </Avatar>
-                <ListItemText primary={props.registration} secondary={moment(props.time).startOf('hour').fromNow()} />
+                <ListItemText primary={props.registration} secondary={moment(props.time).startOf('').fromNow()} />
                 <ListItemText primary={`Slot number : ${props.slotNo}`} />
-                <Button onClick={() => { props.removeCar(props.bookingId) }} variant="contained" color="primary">
+                <Button
+                    onClick={() => { props.removeCar(props.bookingId) }}
+                    variant="contained"
+                    color="primary"
+
+                >
                     Remove
-          </Button>
+                </Button>
             </ListItem>
             <li>
                 <Divider variant="inset" />

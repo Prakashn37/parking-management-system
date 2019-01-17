@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/share/yarn/bin/yarn.js add react-router-dom
+  /usr/local/bin/node /usr/share/yarn/bin/yarn.js remove lodash
 
 PATH: 
   /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  Error: EACCES: permission denied, unlink '/home/haripriya/Desktop/react-course-projects/parking-management-1/node_modules/@babel/runtime/LICENSE'
+  Error: EACCES: permission denied, unlink '/home/haripriya/Desktop/react-course-projects/parking-management-system/node_modules/.bin/acorn'
 
 npm manifest: 
   {
@@ -32,7 +32,11 @@ npm manifest:
       "heroku-postbuild": "yarn run build:prod"
     },
     "dependencies": {
+      "@fortawesome/fontawesome-svg-core": "^1.2.12",
+      "@fortawesome/free-solid-svg-icons": "^5.6.3",
+      "@fortawesome/react-fontawesome": "^0.1.3",
       "@material-ui/core": "^3.8.3",
+      "@material-ui/icons": "^3.0.2",
       "babel-cli": "6.24.1",
       "babel-core": "6.25.0",
       "babel-loader": "7.1.1",
@@ -50,10 +54,11 @@ npm manifest:
       "randomstring": "^1.1.5",
       "react": "^16.7.0",
       "react-dates": "12.3.0",
-      "react-dom": "15.6.1",
+      "react-dom": "^16.7.0",
       "react-modal": "2.2.2",
       "react-redux": "5.0.5",
-      "react-router-dom": "4.1.2",
+      "react-router-dom": "^4.3.1",
+      "react-swipeable-views": "^0.13.0",
       "redux": "3.7.2",
       "redux-persist": "^5.10.0",
       "redux-thunk": "2.2.0",
@@ -75,6 +80,12 @@ Lockfile:
   # yarn lockfile v1
   
   
+  "@babel/runtime@7.0.0":
+    version "7.0.0"
+    resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.0.0.tgz#adeb78fedfc855aa05bc041640f3f6f98e85424c"
+    dependencies:
+      regenerator-runtime "^0.12.0"
+  
   "@babel/runtime@7.1.2":
     version "7.1.2"
     resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.1.2.tgz#81c89935f4647706fc54541145e6b4ecfef4b8e3"
@@ -86,6 +97,29 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.2.0.tgz#b03e42eeddf5898e00646e4c840fa07ba8dcad7f"
     dependencies:
       regenerator-runtime "^0.12.0"
+  
+  "@fortawesome/fontawesome-common-types@^0.2.12":
+    version "0.2.12"
+    resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.12.tgz#42baa71f97ca06faeb0b6718fa5ed20c5eefdf07"
+  
+  "@fortawesome/fontawesome-svg-core@^1.2.12":
+    version "1.2.12"
+    resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-1.2.12.tgz#9732617b1e484435f6946645d7f9ad248f12c437"
+    dependencies:
+      "@fortawesome/fontawesome-common-types" "^0.2.12"
+  
+  "@fortawesome/free-solid-svg-icons@^5.6.3":
+    version "5.6.3"
+    resolved "https://registry.yarnpkg.com/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-5.6.3.tgz#1d7f6669ccd6a1ea673699e41f7e32c81401a260"
+    dependencies:
+      "@fortawesome/fontawesome-common-types" "^0.2.12"
+  
+  "@fortawesome/react-fontawesome@^0.1.3":
+    version "0.1.3"
+    resolved "https://registry.yarnpkg.com/@fortawesome/react-fontawesome/-/react-fontawesome-0.1.3.tgz#266b4047892c3d10498af1075d89252f74015b11"
+    dependencies:
+      humps "^2.0.1"
+      prop-types "^15.5.10"
   
   "@material-ui/core@^3.8.3":
     version "3.8.3"
@@ -119,6 +153,13 @@ Lockfile:
       react-transition-group "^2.2.1"
       recompose "0.28.0 - 0.30.0"
       warning "^4.0.1"
+  
+  "@material-ui/icons@^3.0.2":
+    version "3.0.2"
+    resolved "https://registry.yarnpkg.com/@material-ui/icons/-/icons-3.0.2.tgz#d67a6dd1ec8312d3a88ec97944a63daeef24fe10"
+    dependencies:
+      "@babel/runtime" "^7.2.0"
+      recompose "0.28.0 - 0.30.0"
   
   "@material-ui/system@^3.0.0-alpha.0":
     version "3.0.0-alpha.1"
@@ -2280,7 +2321,7 @@ Lockfile:
     dependencies:
       websocket-driver ">=0.5.1"
   
-  fbjs@^0.8.1, fbjs@^0.8.9:
+  fbjs@^0.8.1, fbjs@^0.8.4, fbjs@^0.8.9:
     version "0.8.17"
     resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.17.tgz#c4d598ead6949112653d6588b01a5cdcd9f90fdd"
     dependencies:
@@ -2656,7 +2697,7 @@ Lockfile:
       inherits "^2.0.3"
       minimalistic-assert "^1.0.0"
   
-  history@^4.5.1, history@^4.7.2:
+  history@^4.7.2:
     version "4.7.2"
     resolved "https://registry.yarnpkg.com/history/-/history-4.7.2.tgz#22b5c7f31633c5b8021c7f4a8a954ac139ee8d5b"
     dependencies:
@@ -2774,6 +2815,10 @@ Lockfile:
   https-browserify@^1.0.0:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/https-browserify/-/https-browserify-1.0.0.tgz#ec06c10e0a34c0f2faf199f7fd7fc78fffd03c73"
+  
+  humps@^2.0.1:
+    version "2.0.1"
+    resolved "https://registry.yarnpkg.com/humps/-/humps-2.0.1.tgz#dd02ea6081bd0568dc5d073184463957ba9ef9aa"
   
   hyphenate-style-name@^1.0.2:
     version "1.0.2"
@@ -3249,7 +3294,7 @@ Lockfile:
       symbol-observable "^1.1.0"
       warning "^3.0.0"
   
-  keycode@^2.1.9:
+  keycode@^2.1.7, keycode@^2.1.9:
     version "2.2.0"
     resolved "https://registry.yarnpkg.com/keycode/-/keycode-2.2.0.tgz#3d0af56dc7b8b8e5cba8d0a97f107204eec22b04"
   
@@ -3357,6 +3402,10 @@ Lockfile:
   lodash@^4.0.0, lodash@^4.1.1, lodash@^4.17.10, lodash@^4.17.2, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1, lodash@~4.17.10:
     version "4.17.10"
     resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
+  
+  lodash@^4.17.11:
+    version "4.17.11"
+    resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
   
   longest@^1.0.1:
     version "1.0.1"
@@ -4383,7 +4432,7 @@ Lockfile:
       object.assign "^4.1.0"
       reflect.ownkeys "^0.2.0"
   
-  prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.6.1:
+  prop-types@^15.5.10, prop-types@^15.6.1:
     version "15.6.1"
     resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.1.tgz#36644453564255ddda391191fb3a125cbdf654ca"
     dependencies:
@@ -4391,7 +4440,7 @@ Lockfile:
       loose-envify "^1.3.1"
       object-assign "^4.1.1"
   
-  prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.2:
+  prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.2:
     version "15.6.2"
     resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
     dependencies:
@@ -4547,16 +4596,16 @@ Lockfile:
     version "1.0.2"
     resolved "https://registry.yarnpkg.com/react-dom-factories/-/react-dom-factories-1.0.2.tgz#eb7705c4db36fb501b3aa38ff759616aa0ff96e0"
   
-  react-dom@15.6.1:
-    version "15.6.1"
-    resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.6.1.tgz#2cb0ed4191038e53c209eb3a79a23e2a4cf99470"
+  react-dom@^16.7.0:
+    version "16.7.0"
+    resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.7.0.tgz#a17b2a7ca89ee7390bc1ed5eb81783c7461748b8"
     dependencies:
-      fbjs "^0.8.9"
       loose-envify "^1.1.0"
-      object-assign "^4.1.0"
-      prop-types "^15.5.10"
+      object-assign "^4.1.1"
+      prop-types "^15.6.2"
+      scheduler "^0.12.0"
   
-  react-event-listener@^0.6.2:
+  react-event-listener@^0.6.0, react-event-listener@^0.6.2:
     version "0.6.5"
     resolved "https://registry.yarnpkg.com/react-event-listener/-/react-event-listener-0.6.5.tgz#d374dbe5da485c9f9d4702f0e76971afbe9b6b2e"
     dependencies:
@@ -4604,16 +4653,18 @@ Lockfile:
       loose-envify "^1.1.0"
       prop-types "^15.5.10"
   
-  react-router-dom@4.1.2:
-    version "4.1.2"
-    resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.1.2.tgz#7f8a7ca868d32acadd19ca09543b40d26df8ec37"
+  react-router-dom@^4.3.1:
+    version "4.3.1"
+    resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.3.1.tgz#4c2619fc24c4fa87c9fd18f4fb4a43fe63fbd5c6"
     dependencies:
-      history "^4.5.1"
+      history "^4.7.2"
+      invariant "^2.2.4"
       loose-envify "^1.3.1"
-      prop-types "^15.5.4"
-      react-router "^4.1.1"
+      prop-types "^15.6.1"
+      react-router "^4.3.1"
+      warning "^4.0.1"
   
-  react-router@^4.1.1:
+  react-router@^4.3.1:
     version "4.3.1"
     resolved "https://registry.yarnpkg.com/react-router/-/react-router-4.3.1.tgz#aada4aef14c809cb2e686b05cee4742234506c4e"
     dependencies:
@@ -4623,6 +4674,35 @@ Lockfile:
       loose-envify "^1.3.1"
       path-to-regexp "^1.7.0"
       prop-types "^15.6.1"
+      warning "^4.0.1"
+  
+  react-swipeable-views-core@^0.13.0:
+    version "0.13.0"
+    resolved "https://registry.yarnpkg.com/react-swipeable-views-core/-/react-swipeable-views-core-0.13.0.tgz#6bf8a8132a756355444537672a14e84b1e3b53c2"
+    dependencies:
+      "@babel/runtime" "7.0.0"
+      warning "^4.0.1"
+  
+  react-swipeable-views-utils@^0.13.0:
+    version "0.13.0"
+    resolved "https://registry.yarnpkg.com/react-swipeable-views-utils/-/react-swipeable-views-utils-0.13.0.tgz#0ea17aa67f88a69d534c79d591f8d82ef98346a4"
+    dependencies:
+      "@babel/runtime" "7.0.0"
+      fbjs "^0.8.4"
+      keycode "^2.1.7"
+      prop-types "^15.6.0"
+      react-event-listener "^0.6.0"
+      react-swipeable-views-core "^0.13.0"
+  
+  react-swipeable-views@^0.13.0:
+    version "0.13.0"
+    resolved "https://registry.yarnpkg.com/react-swipeable-views/-/react-swipeable-views-0.13.0.tgz#a200cef1005d55af6a27b97048afe9a4056e0ab8"
+    dependencies:
+      "@babel/runtime" "7.0.0"
+      dom-helpers "^3.2.1"
+      prop-types "^15.5.4"
+      react-swipeable-views-core "^0.13.0"
+      react-swipeable-views-utils "^0.13.0"
       warning "^4.0.1"
   
   react-transition-group@^2.2.1:
